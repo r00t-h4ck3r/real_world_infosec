@@ -25,7 +25,7 @@ To understand lets see what email is and how it works.
 Electronic mail (email or e-mail) is a method of exchanging messages ("mail") between people using electronic devices. Invented by Ray Tomlinson
 Some early email systems required the author and the recipient to both be online at the same time, in common with instant messaging. Today's email systems are based on a store-and-forward model. Email servers accept, forward, deliver, and store messages. Neither the users nor their computers are required to be online simultaneously; they need to connect only briefly, typically to a mail server or a webmail interface for as long as it takes to send or receive messages.
 
-The basic Internet message format used for email,[33] is now defined by RFC 5322
+The basic Internet message format used for email is now defined by RFC 5322
 
 Each email message has a header (the "header section" of the message, according to the specification), comprising a number of fields ("header fields"). Each field has a name ("field name" or "header field name"), which is followed by the separator character ":", and a value ("field body" or "header field body").
 
@@ -36,7 +36,7 @@ The diagram to the right shows a typical sequence of events that takes place whe
 
 The MUA formats the message in email format and uses the submission protocol, a profile of the Simple Mail Transfer Protocol (SMTP), to send the message content to the local mail submission agent (MSA), in this case smtp.a.org.
 
-The MSA determines the destination address provided in the SMTP protocol (not from the message header), in this case bob@b.org which is a fully qualified domain address (FQDA). 
+The MSA determines the destination address provided in the SMTP protocol (not from the message header), in this case b.org which is a fully qualified domain address (FQDA).
 The part before the @ sign is the local part of the address, often the username of the recipient, and the part after the @ sign is a domain name.
 
 The MSA resolves a domain name to determine the fully qualified domain name of the mail server in the Domain Name System (DNS).
@@ -49,6 +49,21 @@ This server may need to forward the message to other MTAs before it reaches the 
 The MDA delivers it to the mailbox of user bob.
 
 Bob's MUA picks up the message using either the Post Office Protocol (POP3) or the Internet Message Access Protocol (IMAP).
-   
+
+ # Understanding a Email Header
+     
+    An email consists of three vital components: 
+                   the envelope, 
+                   the header(s) 
+                   the body of the message
+    Understanding Email Header is a very important part for both the attacker's all well as for the infosec guys.
+               
+               1.An attacker can use it to do multiple attacks which we will discuss later on. 
+               2.A infosec personnel can have a look at the header and analyze it for forensic purpose.
+               
+      You can have a look at these links which will explain you the email header in a very interactive way.
+        
+        1) Each email has a header assoicated with it 
+        https://mxtoolbox.com/Public/Content/EmailHeaders/   
    
    
