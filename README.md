@@ -50,7 +50,7 @@ The MDA delivers it to the mailbox of user bob.
 
 Bob's MUA picks up the message using either the Post Office Protocol (POP3) or the Internet Message Access Protocol (IMAP).
 
- # Understanding a Email Header
+ # Understanding a Email 
      
     An email consists of three vital components: 
                    the envelope, 
@@ -62,7 +62,43 @@ Bob's MUA picks up the message using either the Post Office Protocol (POP3) or t
                2.A infosec personnel can have a look at the header and analyze it for forensic purpose.
                
       You can have a look at these links which will explain you the email header in a very interactive way.
-        
+  
+  # Understanding a Email Envelope
+      
+      Envelope is the communication between and SMTP Client and Server. See a sample envelope on the right side. Messages sent by client       are indicated by C: and server's responses are indicated by S: Following is true with an email envelope.
+      
+      The client and server first greet each other with a HELO command.
+
+      Client sends a MAIL FROM command representing the sender's email address. This value is also used to send a non-delivery report         (NDR) when message cannot be delivered.
+      
+      The server response with a 250 OK if this sender is acceptable.
+      
+      Next, the client sends one or more recipient's email address using the RCPT TO command.
+      Again, the server responds with a 250 OK, provided the recipient is acceptable. If the server returns a rejection code, the sender       will generate an NDR. In this case, the actual message will never get sent to the receiving SMTP server.
+      
+      # Important Points
+      
+      It is very easy to specify a fake/forged address in the MAIL FROM command
+      The receiving server has the ability to check a few things, such as sender's IP address, MX record and FQDN before accepting any         email.
+      
+      Sample Envelope ( Here "C" stands for client and "S" stands for sender)
+      
+            S: 220 foo.com Service Ready
+            C: HELO bar.com
+            S: 250 OK
+            C: MAIL FROM:<james.baker@xyzinc.com>
+            S: 250 OK
+            C: RCPT TO:<mary.jane@abcinc.com>
+            S: 250 OK
+            C: DATA
+            S: 354 Start mail input;
+            C: Actual email is sent here
+            C: .
+            S: 250 OK
+            C: QUIT
+            
+ # Understanding a Email Header
+ 
         1) Each email has a header assoicated with it and mxtoolbox explains how to view it the best way
         
             https://mxtoolbox.com/Public/Content/EmailHeaders/
