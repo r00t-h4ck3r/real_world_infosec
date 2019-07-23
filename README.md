@@ -63,7 +63,19 @@ Bob's MUA picks up the message using either the Post Office Protocol (POP3) or t
                
       You can have a look at these links which will explain you the email header in a very interactive way.
         
-        1) Each email has a header assoicated with it 
-        https://mxtoolbox.com/Public/Content/EmailHeaders/   
+        1) Each email has a header assoicated with it and mxtoolbox explains how to view it the best way
+        
+           <a href>https://mxtoolbox.com/Public/Content/EmailHeaders/</a>
+        
+        2) How to view e-mail headers explained by Microsoft
+            
+           <a href>https://support.office.com/en-us/article/View-internet-message-headers-cd039382-dc6e-4264-ac74-c048563d212c</a>
+           
+        3) How to view e-mail headers explained by Google
+            
+           <a href>https://support.google.com/mail/answer/29436?hl=en</a>
+           
+          
+        
    
    
