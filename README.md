@@ -109,9 +109,18 @@ Bob's MUA picks up the message using either the Post Office Protocol (POP3) or t
            
         3) How to view e-mail headers explained by Google
             
-            https://support.google.com/mail/answer/29436?hl=en ./
+            https://support.google.com/mail/answer/29436?hl=en 
            
           
-        
+ 
+# When are these values used
+
+      Envelope From (RFC5321.MAIL FROM)
+         Used by the SMTP server to generate NDR
+         Used by SPF filter to determine if it came from the designated IP address.
+
+      Header From (RFC5322.FROM)
+         Used by the email client to display information in the From field.
+         Used by DMARC filter to confirm if the message is authentic
    
    
